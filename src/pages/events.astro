@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allEvents = (await getCollection('events')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const upcomingEvents = allEvents.filter((entry) => entry.data.status === 'upcoming');
+const pastEvents = allEvents.filter((entry) => entry.data.status === 'past');
+---
+
+<BaseLayout
+  title="Events"
+  description="Upcoming and past PauseAI Nigeria events, meetups, and policy briefings."
+>
+  <section class="section-root">
+    <div class="container-root">
+      <h1>Events</h1>
+      <p>Find upcoming chapter events and summaries of past activities.</p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Upcoming Events</h2>
+      <div class="grid-two">
+        {
+          upcomingEvents.length > 0 ? (
+            upcomingEvents.map((entry) => (
+              <article class="card-root card-pad">
+                <h3>{entry.data.title}</h3>
+                <p><strong>Date:</strong> {entry.data.date.toLocaleDateString()}</p>
+                <p><strong>City:</strong> {entry.data.city}</p>
+                <p>{entry.data.description}</p>
+                {entry.data.rsvpUrl && (
+                  <p>
+                    <a href={entry.data.rsvpUrl} target="_blank" rel="noreferrer">RSVP</a>
+                  </p>
+                )}
+              </article>
+            ))
+          ) : (
+            <article class="card-root card-pad">
+              <h3>No events scheduled yet</h3>
+              <p>Follow our WhatsApp communities to be the first to hear about new events.</p>
+              <a href="/take-action#community">Go to community hub</a>
+            </article>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root">
+    <div class="container-root">
+      <h2>Past Events</h2>
+      <div class="grid-two">
+        {
+          pastEvents.length > 0 ? (
+            pastEvents.map((entry) => (
+              <article class="card-root card-pad">
+                <h3>{entry.data.title}</h3>
+                <p><strong>Date:</strong> {entry.data.date.toLocaleDateString()}</p>
+                <p><strong>City:</strong> {entry.data.city}</p>
+                <p>{entry.data.recapBody ?? entry.data.description}</p>
+              </article>
+            ))
+          ) : (
+            <article class="card-root card-pad">
+              <h3>No past events yet</h3>
+              <p>Recaps will appear here as soon as local events are published.</p>
+            </article>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Global PauseAI Events</h2>
+      <p>Global events feed integration is planned after local event publishing is active.</p>
+      <p><a href="https://pauseai.info" target="_blank" rel="noreferrer">Visit PauseAI Global</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .grid-two {
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .card-pad {
+    padding: var(--space-2);
+  }
+</style>

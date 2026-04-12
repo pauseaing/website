@@ -1,49 +1,151 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getGlobalNews } from '../lib/global-news';
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const globalNews = await getGlobalNews();
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+  <section
+    class="section-root section-root-accent"
+    style="position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center;"
+  >
+    <div
+      aria-hidden="true"
+      style="position:absolute;inset:0;background-image:linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);background-size:clamp(24px,4vw,44px) clamp(24px,4vw,44px);pointer-events:none;"
+    ></div>
+    <div class="container-root" style="position:relative;z-index:1;padding-block:var(--space-4);">
+      <p class="kicker">Nigeria chapter · PauseAI Global</p>
+      <h1 class="heading-accent" style="margin-bottom:var(--space-2);">The race to build unsafe AI must stop.</h1>
+      <p style="max-width:62ch;color:var(--text-muted);margin-bottom:var(--space-3);">
+        Frontier AI is being developed faster than safety can keep pace. PauseAI Nigeria organizes citizens,
+        researchers, and policymakers to demand a global pause before it is too late.
+      </p>
+      <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
+        <a href="/take-action#join" class="btn-root btn-primary">Join the chapter</a>
+        <a href="/why-pause" class="btn-root btn-secondary">Why pause AI?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root" style="padding-block:var(--space-3);">
+    <div class="container-root stats-grid">
+      <article class="card-root card-pad"><h3>110k+</h3><p>Global signatories</p></article>
+      <article class="card-root card-pad"><h3>30+</h3><p>National chapters</p></article>
+      <article class="card-root card-pad"><h3>1st</h3><p>West Africa chapter</p></article>
+      <article class="card-root card-pad"><h3>0</h3><p>Days to waste</p></article>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root cards-grid">
+      <article class="card-root card-pad">
+        <h3>Upcoming Event</h3>
+        <p style="color:var(--text-muted);">No event scheduled yet. Follow communities for first notice.</p>
+        <a href="/events">View events</a>
+      </article>
+      <article class="card-root card-pad">
+        <h3>Policy Watch</h3>
+        <p style="color:var(--text-muted);">Track NITDA, NCC, National Assembly and state-level AI activity.</p>
+        <a href="/nigeria-ai-policy">Open policy tracker</a>
+      </article>
+      <article class="card-root card-pad">
+        <h3>Take Action</h3>
+        <p style="color:var(--text-muted);">Join the chapter, contact lawmakers, and plug into local groups.</p>
+        <a href="/take-action">Act now</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-root">
+    <div class="container-root">
+      <h2>Why pause AI in Nigeria?</h2>
+      <p>
+        Nigeria's digital economy is on track to exceed half a trillion dollars in value this decade, and a
+        large share of future growth depends on trust in digital infrastructure and public institutions.
+        If frontier AI systems are deployed at speed without proven safeguards, key sectors including finance,
+        law, media, and healthcare could face rapid disruption before workers and regulators are prepared.
+      </p>
+      <p>
+        A pause on the most powerful systems is a practical safety step, not a rejection of innovation. It gives
+        Nigeria space to shape policy, protect civic processes from AI-enabled disinformation, and build local
+        governance capacity instead of inheriting decisions made elsewhere.
+      </p>
+      <p><a href="/why-pause">Read the full case</a></p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>From PauseAI Global</h2>
+      <div class="news-grid">
+        {
+          globalNews.map((item) => (
+            <article class="card-root card-pad">
+              <h3>{item.title}</h3>
+              <p class="news-meta">{item.pubDate}</p>
+              <a href={item.link} target="_blank" rel="noreferrer">Read update</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root">
+    <div class="container-root">
+      <h2>Get the Nigeria AI briefing</h2>
+      <p>Policy updates, chapter news, and action alerts straight to your inbox.</p>
+      <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <label>
+          Email address
+          <input type="email" name="email" required />
+        </label>
+        <button class="btn-root btn-primary" type="submit">Subscribe</button>
+      </form>
+      <p class="trust-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .kicker {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--brand-green);
+    margin: 0 0 var(--space-1);
+  }
+  .stats-grid,
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-2);
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-2);
+  }
+  .card-pad {
+    padding: var(--space-2);
+  }
+  .news-meta {
+    color: var(--text-muted);
+    margin: 0.2rem 0 0.7rem;
+  }
+  .newsletter-form {
+    display: flex;
+    align-items: end;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .newsletter-form label {
+    display: grid;
+    gap: 0.4rem;
+    min-width: min(100%, 360px);
+  }
+  .trust-note {
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+  }
+</style>

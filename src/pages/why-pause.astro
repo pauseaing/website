@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Why Pause AI?"
+  description="A practical, evidence-first case for pausing frontier AI development until safety is verifiable."
+>
+  <section class="section-root">
+    <div class="container-root">
+      <h1>Why the most powerful AI systems must be paused</h1>
+      <p>A clear-eyed case for Nigerian citizens, researchers, and decision-makers.</p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>The Risks in Three Pillars</h2>
+      <div class="grid-three">
+        <article class="card-root card-pad">
+          <h3>Existential Risk</h3>
+          <p>
+            Leading researchers including Geoffrey Hinton and Yoshua Bengio have warned that advanced
+            AI could create severe, potentially irreversible harms if progress outpaces governance.
+            The 2023 Statement on AI Risk, signed by hundreds of experts, argued that reducing extinction-level
+            AI risk should be treated as a global priority alongside pandemics and nuclear threats.
+          </p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Loss of Control</h3>
+          <p>
+            Frontier systems are improving faster than independent auditing, safety testing, and legal oversight.
+            Competition between labs and states creates pressure to deploy first and patch later. That race
+            dynamic increases the probability of misuse, accidents, and governance failure.
+          </p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Nigeria's Exposure</h3>
+          <p>
+            Nigeria is deeply exposed through finance, telecoms, media, education, and public services.
+            AI-enabled misinformation can target elections and social cohesion at scale. Without strong
+            local safeguards, Nigeria could become dependent on external systems built for different legal
+            and democratic realities.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root">
+    <div class="container-root">
+      <h2>Our Proposal</h2>
+      <p>
+        We call for a temporary pause on training the most powerful general AI systems until developers
+        and governments can demonstrate credible safety guarantees.
+      </p>
+      <ul>
+        <li>Not a ban on all AI.</li>
+        <li>Not anti-technology.</li>
+        <li>A call for democratic oversight and enforceable safeguards.</li>
+      </ul>
+      <p><a href="https://pauseai.info/proposal" target="_blank" rel="noreferrer">Read the global proposal</a>.</p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Nigeria in Context</h2>
+      <p>
+        Nigeria has become one of Africa's most influential digital economies, with rapid growth in fintech,
+        telecoms, digital public services, and online media. That growth creates opportunity, but it also expands
+        the attack surface for AI-related harm. If highly capable models are rolled out without enforceable safety
+        standards, disruption will not be theoretical. It will hit sectors where millions of livelihoods are already
+        fragile and where regulatory capacity is still catching up to existing digital risks.
+      </p>
+      <p>
+        In practical terms, frontier AI could intensify disinformation in election cycles, reduce transparency in
+        automated decision systems, and accelerate labor displacement in white-collar work before retraining systems
+        are in place. Sectors such as customer operations, legal services, financial analysis, media production,
+        and even parts of healthcare administration are likely to see fast productivity shifts that may not be matched
+        by worker protections or social safety policy. A pause on the most powerful systems creates policy time for
+        Nigeria to design clear standards on auditability, accountability, and public-interest oversight.
+      </p>
+      <p>
+        Nigeria is not starting from zero. Institutions including NITDA and other policy bodies are already discussing
+        AI strategy, and this momentum should be deepened with stronger safety language, independent oversight, and
+        democratic consultation. Across Africa, countries like Kenya and South Africa are increasingly active in AI
+        governance dialogue. Nigeria should lead that continental conversation rather than inherit rules written elsewhere.
+        The goal is not to reject innovation. The goal is to ensure innovation is aligned with public safety, democratic
+        legitimacy, and long-term national resilience.
+      </p>
+      <p><a href="/nigeria-ai-policy">See the Nigeria AI Policy Tracker</a>.</p>
+    </div>
+  </section>
+
+  <section class="section-root">
+    <div class="container-root">
+      <h2>Common Counter-Arguments</h2>
+      <div class="grid-two">
+        <article class="card-root card-pad">
+          <h3>"AI will create jobs"</h3>
+          <p>
+            AI can create new industries, but that does not cancel short-term displacement risk. Without a transition plan,
+            many workers can lose bargaining power and income before new opportunities are accessible. A safety pause gives
+            time for workforce policy, retraining pathways, and labor protections to catch up.
+          </p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>"Regulate later"</h3>
+          <p>
+            Regulation that arrives after high-risk deployment is often cleanup, not prevention. Once unsafe systems are widely
+            integrated into critical infrastructure, rollback becomes politically and economically difficult. Prevention requires
+            rules before deployment, not after harm.
+          </p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>"This is a Western concern"</h3>
+          <p>
+            African countries are major consumers of AI systems developed elsewhere, often with limited ability to audit training
+            data, risk controls, or governance assumptions. That makes this a sovereignty issue, not a foreign debate. Nigeria has
+            strong reasons to shape global standards from an African perspective.
+          </p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>"Nigeria has bigger problems"</h3>
+          <p>
+            Nigeria has multiple urgent priorities, and that is exactly why AI safety matters. Poorly governed AI can worsen fraud,
+            inequality, misinformation, and institutional mistrust across existing policy challenges. Responsible AI governance should
+            be integrated into development strategy, not treated as a separate luxury issue.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Further Reading</h2>
+      <ul>
+        <li><a href="https://www.safe.ai/statement-on-ai-risk" target="_blank" rel="noreferrer">Statement on AI Risk</a></li>
+        <li><a href="https://pauseai.info" target="_blank" rel="noreferrer">PauseAI Global</a></li>
+        <li><a href="/resources">PauseAI Nigeria resources list</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .grid-three {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-2);
+  }
+  .grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-2);
+  }
+  .card-pad {
+    padding: var(--space-2);
+  }
+</style>

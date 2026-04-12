@@ -1,5 +1,4 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = 'PauseAI Nigeria';
+export const SITE_DESCRIPTION =
+	'PauseAI Nigeria is the first West Africa chapter of PauseAI Global, organizing citizens, researchers, and policymakers for safe AI governance.';
+export const SITE_URL = 'https://pauseai.ng';

@@ -1,63 +1,92 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
+<BaseLayout
+	title="About PauseAI Nigeria"
+	description="Who we are, why this chapter was formed, and how to work with PauseAI Nigeria."
 >
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+	<section class="section-root">
+		<div class="container-root">
+			<h1>About PauseAI Nigeria</h1>
+			<p>
+				PauseAI Nigeria was founded by a small group of organizers, researchers, and technology professionals
+				who saw a widening gap between the pace of frontier AI development and the pace of public accountability.
+				We formed this chapter because Nigeria should not wait for external institutions to define AI risk policy
+				on our behalf.
+			</p>
+			<p>
+				As the first West Africa chapter in PauseAI Global, we work to translate global AI safety concerns into
+				a credible Nigerian policy agenda. Our mission is to build public understanding, support evidence-based
+				law and regulation, and organize practical civic action so that powerful AI systems are governed by safety,
+				democratic oversight, and public interest.
+			</p>
+		</div>
+	</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+	<section id="team" class="section-root section-root-accent">
+		<div class="container-root">
+			<h2>Founding Team</h2>
+			<p>Team profiles are editable via CMS and will expand as city organizers come onboard.</p>
+			<div class="team-grid">
+				{
+					team.length > 0 ? (
+						team.map((member) => (
+							<article class="card-root card-pad">
+								<h3>{member.data.name}</h3>
+								<p><strong>{member.data.role}</strong></p>
+								<p>{member.data.bio}</p>
+							</article>
+						))
+					) : (
+						<article class="card-root card-pad">
+							<h3>Team directory</h3>
+							<p>Chapter team profiles are maintained in the CMS and published here automatically.</p>
+						</article>
+					)
+				}
+			</div>
+		</div>
+	</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+	<section class="section-root">
+		<div class="container-root">
+			<h2>Chapter Timeline</h2>
+			<ul class="timeline">
+				<li>Founding chapter coordination began in early 2026.</li>
+				<li>Initial policy and organizing roadmap drafted across Lagos and Abuja networks.</li>
+				<li>Public chapter rollout and volunteer expansion in progress.</li>
+				<li>Legal registration and formal governance structure in progress.</li>
+			</ul>
+		</div>
+	</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+	<section id="press" class="section-root section-root-accent">
+		<div class="container-root">
+			<h2>Press and Media</h2>
+			<p>For interviews and statements, contact <a href="mailto:nigeria@pauseai.info">nigeria@pauseai.info</a>.</p>
+			<p>Response target: within 48 hours.</p>
+		</div>
+	</section>
+</BaseLayout>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+<style>
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+	.card-pad {
+		padding: var(--space-2);
+	}
+	.timeline {
+		margin: var(--space-2) 0 0;
+		padding-left: 1.2rem;
+		display: grid;
+		gap: 0.6rem;
+	}
+</style>

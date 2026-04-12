@@ -18,22 +18,28 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: min(100% - 2.5rem, var(--container-lg));
+				margin: var(--space-4) auto;
 			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 2rem;
+				gap: var(--space-2);
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li {
 				width: calc(50% - 1rem);
+				background: var(--surface-card);
+				border: 1px solid var(--border-subtle);
+				border-radius: var(--radius-lg);
+				box-shadow: var(--shadow-elev-1);
+				padding: var(--space-1);
 			}
 			ul li * {
 				text-decoration: none;
-				transition: 0.2s ease;
+				transition: var(--duration-base) var(--ease-base);
 			}
 			ul li:first-child {
 				width: 100%;
@@ -48,26 +54,26 @@ const posts = (await getCollection('blog')).sort(
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
-				border-radius: 12px;
+				border-radius: var(--radius-md);
 			}
 			ul li a {
 				display: block;
 			}
 			.title {
 				margin: 0;
-				color: rgb(var(--black));
+				color: var(--text-strong);
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: var(--text-muted);
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: var(--brand-orange);
 			}
 			ul a:hover img {
-				box-shadow: var(--box-shadow);
+				box-shadow: var(--shadow-elev-2);
 			}
 			@media (max-width: 720px) {
 				ul {

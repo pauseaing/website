@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Communities"
+  description="Join an existing city group or start a new PauseAI community in your city."
+>
+  <section class="section-root">
+    <div class="container-root">
+      <h1>Start or Join a Local Group</h1>
+      <p>We are building city-based communities and a nationwide network for action.</p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Active City Groups</h2>
+      <div class="group-grid">
+        <article class="card-root card-pad">
+          <h3>Lagos</h3>
+          <p>City organizing channel for volunteers, meetup updates, and campaign coordination.</p>
+          <a href="#" aria-disabled="true">Join Lagos channel</a>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Abuja</h3>
+          <p>FCT chapter channel focused on policy engagement and local chapter activities.</p>
+          <a href="#" aria-disabled="true">Join Abuja channel</a>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Kano</h3>
+          <p>Northern chapter coordination channel for outreach and public education events.</p>
+          <a href="#" aria-disabled="true">Join Kano channel</a>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Nationwide</h3>
+          <p>General national channel connecting members across cities and disciplines.</p>
+          <a href="#" aria-disabled="true">Join nationwide channel</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-root">
+    <div class="container-root">
+      <h2>Start a Group in Your City</h2>
+      <p>Register your interest and we will connect you with resources to launch your first meetup.</p>
+      <form name="city-group" method="POST" data-netlify="true" class="form-grid">
+        <input type="hidden" name="form-name" value="city-group" />
+        <label>
+          Name
+          <input name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          City
+          <input name="city" required />
+        </label>
+        <label>
+          Tell us about yourself and your interest
+          <textarea name="brief" rows="5" required></textarea>
+        </label>
+        <button class="btn-root btn-primary" type="submit">Register your city</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .group-grid {
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .card-pad {
+    padding: var(--space-2);
+  }
+  .form-grid {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 720px;
+  }
+  label {
+    display: grid;
+    gap: 0.45rem;
+  }
+</style>

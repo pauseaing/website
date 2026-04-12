@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Take Action"
+  description="Join PauseAI Nigeria and take practical actions to support safe AI governance."
+>
+  <section class="section-root">
+    <div class="container-root">
+      <h1>There's something you can do. Right now.</h1>
+      <p>Whether you have five minutes or five hours, here is how to make a difference.</p>
+    </div>
+  </section>
+
+  <section id="join" class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Join the Chapter</h2>
+      <p>Tell us how you want to help and we will connect you with people in your city.</p>
+      <form name="join-chapter" method="POST" data-netlify="true" class="form-grid">
+        <input type="hidden" name="form-name" value="join-chapter" />
+        <label>
+          Full name
+          <input name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          City
+          <input name="city" required />
+        </label>
+        <label>
+          How can you help?
+          <select name="helpArea" required>
+            <option value="">Select one</option>
+            <option>Research</option>
+            <option>Writing</option>
+            <option>Events</option>
+            <option>Policy</option>
+            <option>Tech</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <button class="btn-root btn-primary" type="submit">Join the chapter</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="lawmakers" class="section-root">
+    <div class="container-root">
+      <h2>Contact Your Lawmakers</h2>
+    <p>Use this editable template and personalize it with your name, constituency, and priorities.</p>
+      <label for="letter-template" class="sr-only">Letter template</label>
+      <textarea id="letter-template" rows="12">
+Dear Honourable Member / Director-General,
+
+  I am writing as a Nigerian citizen deeply concerned about the pace of frontier AI development and the lack of enforceable safety guarantees. I respectfully urge your office to support a formal Nigerian policy position calling for a temporary international pause on training the most powerful general AI systems until robust safety, accountability, and democratic oversight standards are in place.
+
+  This is not a call to ban all AI. Nigeria can and should continue using AI for healthcare, education, agriculture, and public services. The concern is specifically about frontier systems that are being developed and deployed faster than regulators, researchers, and citizens can evaluate their risks. If these systems are released without meaningful controls, Nigeria could face major consequences, including labor disruption, AI-enabled election misinformation, dependence on foreign systems we cannot independently audit, and increased threats to public trust.
+
+  I am asking for three concrete steps:
+  1. Support an open policy consultation led by relevant institutions, including NITDA, the National Assembly, civil society groups, academic experts, and labor stakeholders.
+  2. Back a precautionary national stance that aligns with global calls for a temporary frontier AI pause until safety standards are verifiable and enforceable.
+  3. Advocate for Nigerian leadership in regional and international AI governance discussions, so Africa helps shape the rules rather than simply receiving them.
+
+  Nigeria has an opportunity to lead with principle and foresight. A responsible pause on high-risk frontier systems is a practical measure to protect citizens, strengthen democratic oversight, and ensure innovation serves the public interest.
+
+Sincerely,
+[Your Name]
+  [City / Constituency]
+      </textarea>
+      <div class="button-row">
+        <a class="btn-root btn-secondary" href="https://nitda.gov.ng" target="_blank" rel="noreferrer">NITDA contact</a>
+        <a class="btn-root btn-secondary" href="https://nass.gov.ng" target="_blank" rel="noreferrer">National Assembly</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>WhatsApp Community Hub</h2>
+      <div class="community-grid">
+        <article class="card-root card-pad">
+          <h3>Lagos</h3>
+          <p>Lagos organizing updates and action alerts for volunteers and supporters.</p>
+          <a href="#" aria-disabled="true">Join Lagos group</a>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Abuja</h3>
+          <p>Abuja policy and civic action coordination for chapter members in the FCT.</p>
+          <a href="#" aria-disabled="true">Join Abuja group</a>
+        </article>
+        <article class="card-root card-pad">
+          <h3>Kano</h3>
+          <p>Kano chapter coordination for local awareness, outreach, and public engagement.</p>
+          <a href="#" aria-disabled="true">Join Kano group</a>
+        </article>
+        <article class="card-root card-pad">
+          <h3>National</h3>
+          <p>Nationwide discussion channel for cross-city collaboration and chapter-wide updates.</p>
+          <a href="#" aria-disabled="true">Join national group</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .form-grid {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 720px;
+  }
+  label {
+    display: grid;
+    gap: 0.45rem;
+  }
+  .button-row {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+  }
+  .community-grid {
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .card-pad {
+    padding: var(--space-2);
+  }
+  textarea {
+    width: min(100%, 840px);
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact PauseAI Nigeria for press, partnership, and volunteer enquiries."
+>
+  <section class="section-root">
+    <div class="container-root">
+      <h1>Contact PauseAI Nigeria</h1>
+      <p>We aim to respond within 48 hours.</p>
+      <p>Email: <a href="mailto:nigeria@pauseai.info">nigeria@pauseai.info</a></p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Send an Enquiry</h2>
+      <form name="contact" method="POST" data-netlify="true" class="form-grid">
+        <input type="hidden" name="form-name" value="contact" />
+        <label>
+          Name
+          <input name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Subject
+          <select name="subject" required>
+            <option value="">Select one</option>
+            <option>Press</option>
+            <option>Partnership</option>
+            <option>Volunteer</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="7" required></textarea>
+        </label>
+        <button class="btn-root btn-primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .form-grid {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 720px;
+  }
+  label {
+    display: grid;
+    gap: 0.45rem;
+  }
+</style>

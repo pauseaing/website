@@ -56,7 +56,7 @@ const team = defineCollection({
 			name: z.string(),
 			role: z.string(),
 			bio: z.string(),
-			email: z.string().email(),
+				email: z.string().email().optional(),
 			linkedin: z.string().url(),
 			order: z.number().int().nonnegative().default(0),
 			photo: image().optional(),

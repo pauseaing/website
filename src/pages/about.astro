@@ -56,9 +56,11 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 									<p>{member.data.bio}</p>
 								</div>
 								<div class="team-links" aria-label={`Contact links for ${member.data.name}`}>
-									<a href={`mailto:${member.data.email}`} aria-label={`Email ${member.data.name}`}>
-										<i class="ri-mail-line" aria-hidden="true"></i>
-									</a>
+									{member.data.email && (
+										<a href={`mailto:${member.data.email}`} aria-label={`Email ${member.data.name}`}>
+											<i class="ri-mail-line" aria-hidden="true"></i>
+										</a>
+									)}
 									<a href={member.data.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.data.name} LinkedIn`}>
 										<i class="ri-linkedin-box-line" aria-hidden="true"></i>
 									</a>

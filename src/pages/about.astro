@@ -36,7 +36,7 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 				{
 					team.length > 0 ? (
 						team.map((member) => (
-							<article class="card-root card-pad">
+							<article class="card-root card-pad team-card">
 								{
 									member.data.photo ? (
 										<Image
@@ -50,9 +50,19 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 										<div class="team-photo team-photo-fallback" aria-hidden="true"></div>
 									)
 								}
-								<h3>{member.data.name}</h3>
+								<div class="team-card-body">
+									<h3 class="team-name">{member.data.name}</h3>
 								<p><strong>{member.data.role}</strong></p>
-								<p>{member.data.bio}</p>
+									<p>{member.data.bio}</p>
+								</div>
+								<div class="team-links" aria-label={`Contact links for ${member.data.name}`}>
+									<a href={`mailto:${member.data.email}`} aria-label={`Email ${member.data.name}`}>
+										<i class="ri-mail-line" aria-hidden="true"></i>
+									</a>
+									<a href={member.data.linkedin} target="_blank" rel="noreferrer" aria-label={`${member.data.name} LinkedIn`}>
+										<i class="ri-linkedin-box-line" aria-hidden="true"></i>
+									</a>
+								</div>
 							</article>
 						))
 					) : (
@@ -97,6 +107,11 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	.card-pad {
 		padding: var(--space-2);
 	}
+	.team-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
 	.team-photo {
 		width: 100%;
 		aspect-ratio: 3 / 4;
@@ -107,6 +122,33 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	}
 	.team-photo-fallback {
 		background: linear-gradient(145deg, color-mix(in srgb, var(--brand-green) 22%, white), white);
+	}
+	.team-card-body {
+		flex: 1;
+	}
+	.team-name {
+		color: var(--brand-orange);
+		margin-bottom: 0.35rem;
+	}
+	.team-links {
+		display: flex;
+		gap: 0.7rem;
+		margin-top: var(--space-2);
+	}
+	.team-links a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.2rem;
+		height: 2.2rem;
+		border: 1px solid var(--border-color);
+		border-radius: 999px;
+		color: var(--brand-orange);
+		text-decoration: none;
+	}
+	.team-links a:hover {
+		border-color: var(--brand-orange);
+		background: color-mix(in srgb, var(--brand-orange) 10%, white);
 	}
 	.timeline {
 		margin: var(--space-2) 0 0;

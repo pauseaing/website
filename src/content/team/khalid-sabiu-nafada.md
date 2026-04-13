@@ -4,5 +4,5 @@ role: Technical Lead
 bio: Oversees website development and maintenance, system upkeep, and technical
   support, ensuring reliable digital presence of the PauseAI Nigeria Chapter
 order: 1
-photo: /src/assets/khalid-nafada.png
+photo: ../../src/assets/khalid-nafada-pn.png
 ---

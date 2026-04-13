@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "src/assets"
-public_folder: "../../src/assets"
+public_folder: "/src/assets"
 
 site_url: "https://pauseai.ng"
 display_url: "https://pauseai.ng"

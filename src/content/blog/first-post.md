@@ -7,7 +7,7 @@ description: "PauseAI Nigeria launches at a pivotal moment in 2026, as the
 tag: article
 pubDate: 2026-07-02T23:22:00.000+01:00
 author: Khalid Nafada
-heroImage: ../../assets/blog-placeholder-3.jpg
+heroImage: /src/assets/blog-placeholder-3.jpg
 ---
 
 

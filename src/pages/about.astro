@@ -52,7 +52,7 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 								}
 								<div class="team-card-body">
 									<h3 class="team-name">{member.data.name}</h3>
-								<p><strong>{member.data.role}</strong></p>
+								<p><strong class="team-role">{member.data.role}</strong></p>
 									<p>{member.data.bio}</p>
 								</div>
 								<div class="team-links" aria-label={`Contact links for ${member.data.name}`}>
@@ -103,7 +103,8 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	.team-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: var(--space-2);
+		gap: var(--space-2) var(--space-2);
+		row-gap: var(--space-4);
 		margin-top: var(--space-2);
 	}
 	.card-pad {
@@ -130,7 +131,10 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	}
 	.team-name {
 		color: var(--brand-orange);
-		margin-bottom: 0.35rem;
+		
+	.team-role {
+		color: var(--brand-green);
+	}margin-bottom: 0.35rem;
 	}
 	.team-links {
 		display: flex;

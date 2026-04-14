@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
@@ -21,73 +20,92 @@ const posts = (await getCollection('blog')).sort(
 				width: min(100% - 2.5rem, var(--container-lg));
 				margin: var(--space-4) auto;
 			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--space-2);
+			.post-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				column-gap: var(--space-2);
+				row-gap: var(--space-4);
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
+			.post-card {
 				background: var(--surface-card);
 				border: 1px solid var(--border-subtle);
 				border-radius: var(--radius-lg);
 				box-shadow: var(--shadow-elev-1);
-				padding: var(--space-1);
+				padding: var(--space-2);
+				height: 100%;
+				min-height: 250px;
+				transition: transform var(--duration-fast) var(--ease-base), box-shadow var(--duration-fast) var(--ease-base), border-color var(--duration-fast) var(--ease-base);
 			}
-			ul li * {
+			.post-card:hover {
+				transform: translateY(-2px);
+				box-shadow: var(--shadow-elev-2);
+				border-color: var(--border-strong);
+			}
+			.post-link {
+				display: flex;
+				flex-direction: column;
+				gap: 0.8rem;
+				height: 100%;
 				text-decoration: none;
-				transition: var(--duration-base) var(--ease-base);
 			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+			.post-meta {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 0.6rem;
+				color: var(--text-muted);
+				font-size: 0.9rem;
 			}
-			ul li:first-child img {
-				width: 100%;
+			.tag {
+				display: inline-flex;
+				align-items: center;
+				padding: 0.18rem 0.55rem;
+				border: 1px solid var(--border-subtle);
+				border-radius: 999px;
+				font-size: 0.78rem;
+				text-transform: uppercase;
+				letter-spacing: 0.04em;
 			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: var(--radius-md);
-			}
-			ul li a {
-				display: block;
+			.date {
+				margin: 0;
 			}
 			.title {
 				margin: 0;
 				color: var(--text-strong);
-				line-height: 1;
+				line-height: 1.25;
+				font-size: clamp(1.15rem, 2.1vw, 1.35rem);
 			}
-			.date {
+			.description {
 				margin: 0;
-				color: var(--text-muted);
+				color: var(--text-body);
+				line-height: 1.6;
 			}
-			ul li a:hover h4,
-			ul li a:hover .date {
+			.read-more {
+				margin-top: auto;
+				color: var(--brand-orange);
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 500;
+				font-size: 0.92rem;
+			}
+			.post-link:hover .title,
+			.post-link:hover .read-more,
+			.post-link:hover .date {
 				color: var(--brand-orange);
 			}
-			ul a:hover img {
-				box-shadow: var(--shadow-elev-2);
+			.page-title {
+				margin: 0 0 var(--space-2);
 			}
 			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
+				.post-grid {
+					grid-template-columns: 1fr;
+					row-gap: var(--space-5);
 				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+				.post-card {
+					min-height: 0;
+					padding: var(--space-2);
 				}
 			}
 		</style>
@@ -96,18 +114,21 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
+				<h1 class="page-title">Blog</h1>
+				<ul class="post-grid">
 					{
 						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
+							<li class="post-card">
+								<a class="post-link" href={`/blog/${post.id}/`}>
+									<div class="post-meta">
+										<span class="tag">{post.data.tag}</span>
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									</div>
 									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+									<p class="description">{post.data.description}</p>
+									<span class="read-more">Read article -></span>
 								</a>
 							</li>
 						))

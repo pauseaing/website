@@ -1,11 +1,10 @@
 ---
-const today = new Date();
 ---
 
 <footer>
 	<div class="container-root footer-inner">
 		<div>
-			<p>&copy; {today.getFullYear()} PauseAI Nigeria. All rights reserved.</p>
+			<p>&copy; <span id="footer-year"></span> PauseAI Nigeria. All rights reserved.</p>
 			<p class="contact-line">Contact: <a href="mailto:nigeria@pauseai.info">nigeria@pauseai.info</a></p>
 		</div>
 		<div class="quick-links" aria-label="Footer links">
@@ -13,10 +12,19 @@ const today = new Date();
 			<a href="/resources">Resources</a>
 			<a href="/nigeria-ai-policy">Policy Tracker</a>
 		</div>
-		<div class="social-links" aria-label="Social links coming soon">
-			<span>X (coming soon)</span>
-			<span>LinkedIn (coming soon)</span>
-			<span>WhatsApp (coming soon)</span>
+		<div class="social-links" aria-label="Social links">
+			<a href="https://chat.whatsapp.com/L4o2IiOX1HI2GWQi0J9ZJv" target="_blank" rel="noreferrer" aria-label="Join on WhatsApp">
+				<i class="ri-whatsapp-line" aria-hidden="true"></i>
+				<span>WhatsApp</span>
+			</a>
+			<a href="https://www.linkedin.com/company/pauseai-nigeria/" target="_blank" rel="noreferrer" aria-label="Follow on LinkedIn">
+				<i class="ri-linkedin-box-line" aria-hidden="true"></i>
+				<span>LinkedIn</span>
+			</a>
+			<a href="https://www.facebook.com/profile.php?id=61585704817897&mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Follow on Facebook">
+				<i class="ri-facebook-circle-line" aria-hidden="true"></i>
+				<span>Facebook</span>
+			</a>
 		</div>
 	</div>
 </footer>
@@ -50,9 +58,16 @@ const today = new Date();
 		gap: 0.7rem;
 		font-size: 0.85rem;
 	}
-	.social-links span {
+	.social-links a {
 		display: inline-flex;
 		align-items: center;
+		gap: 0.35rem;
+		text-decoration: none;
+		color: var(--text-muted);
+	}
+	.social-links i {
+		font-size: 1.05rem;
+		color: var(--brand-green);
 	}
 	a:hover {
 		color: var(--brand-orange);
@@ -67,3 +82,10 @@ const today = new Date();
 		}
 	}
 </style>
+
+<script is:inline>
+	const footerYear = document.getElementById('footer-year');
+	if (footerYear) {
+		footerYear.textContent = String(new Date().getFullYear());
+	}
+</script>

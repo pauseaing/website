@@ -9,42 +9,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section-root">
     <div class="container-root">
       <h1>There's something you can do. Right now.</h1>
-      <p>Whether you have five minutes or five hours, here is how to make a difference.</p>
+      <p>Whether you have five minutes or five hours, here is how to help ensure Nigeria shapes AI governance.</p>
+    </div>
+  </section>
+
+  <section class="section-root section-root-accent">
+    <div class="container-root">
+      <h2>Five Ways to Contribute</h2>
+      <div class="cards-grid">
+        <article class="card-root card-pad">
+          <h3><i class="ri-team-line action-icon" aria-hidden="true"></i> Grow the Movement</h3>
+          <p>Join our WhatsApp group, attend events, and invite others to volunteer. Every person who becomes aware of AI risks and democratic governance matters.</p>
+        </article>
+        <article class="card-root card-pad">
+          <h3><i class="ri-book-open-line action-icon" aria-hidden="true"></i> Inform the Discourse</h3>
+          <p>Share articles, post on social media, write letters to newspapers, host university discussions. Help shift Nigeria’s conversation on AI safety and sovereignty.</p>
+        </article>
+        <article class="card-root card-pad">
+          <h3><i class="ri-megaphone-line action-icon" aria-hidden="true"></i> Lobby Policymakers</h3>
+          <p>Contact lawmakers, send policy briefs, request meetings. Direct advocacy is the most effective tool. We provide templates and talking points.</p>
+        </article>
+        <article class="card-root card-pad">
+          <h3><i class="ri-flag-line action-icon" aria-hidden="true"></i> Organize Civic Action</h3>
+          <p>Join coordinated protests, campaigns, and public pressure initiatives. Visible civic action shifts media attention and political will.</p>
+        </article>
+        <article class="card-root card-pad">
+          <h3><i class="ri-graduation-cap-line action-icon" aria-hidden="true"></i> Reach Young Leaders</h3>
+          <p>Engage students, host debates, bring AI safety conversations to universities. Build the next generation of Nigerian decision-makers who understand these stakes.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <section id="join" class="section-root section-root-accent">
     <div class="container-root">
-      <h2>Join the Chapter</h2>
-      <p>Tell us how you want to help and we will connect you with people in your city.</p>
-      <form name="join-chapter" method="POST" data-netlify="true" class="form-grid">
-        <input type="hidden" name="form-name" value="join-chapter" />
-        <label>
-          Full name
-          <input name="name" required />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          City
-          <input name="city" required />
-        </label>
-        <label>
-          How can you help?
-          <select name="helpArea" required>
-            <option value="">Select one</option>
-            <option>Research</option>
-            <option>Writing</option>
-            <option>Events</option>
-            <option>Policy</option>
-            <option>Tech</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <button class="btn-root btn-primary" type="submit">Join the chapter</button>
-      </form>
+      <h2>Become a Volunteer</h2>
+      <p>Fill out the form below to tell us how you want to help. We will connect you with people in your network and city who share your commitment to safe, democratically-governed AI.</p>
+      <div class="join-embed card-root card-pad">
+        <iframe
+          data-tally-src="https://tally.so/embed/wbGvKe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          width="100%"
+          height="282"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Tally Form"
+          allowfullscreen
+          sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation"
+        ></iframe>
+      </div>
+      <script src="https://tally.so/widgets/embed.js"></script>
+
+      <article class="card-root card-pad whatsapp-cta">
+        <h3>Join our WhatsApp community</h3>
+        <p>Connect with the chapter for local updates, events, and action alerts.</p>
+        <a class="btn-root btn-primary" href="https://chat.whatsapp.com/L4o2IiOX1HI2GWQi0J9ZJv" target="_blank" rel="noreferrer">Join WhatsApp group</a>
+      </article>
     </div>
   </section>
 
@@ -72,8 +92,8 @@ Sincerely,
   [City / Constituency]
       </textarea>
       <div class="button-row">
-        <a class="btn-root btn-secondary" href="https://nitda.gov.ng" target="_blank" rel="noreferrer">NITDA contact</a>
-        <a class="btn-root btn-secondary" href="https://nass.gov.ng" target="_blank" rel="noreferrer">National Assembly</a>
+        <a id="mail-nitda" class="btn-root btn-secondary" href="mailto:info@nitda.gov.ng">NITDA contact</a>
+        <a id="mail-nass" class="btn-root btn-secondary" href="mailto:info@nass.gov.ng">National Assembly</a>
       </div>
     </div>
   </section>
@@ -82,6 +102,7 @@ Sincerely,
     <div class="container-root">
       <h2>WhatsApp Community Hub</h2>
       <div class="community-grid">
+        <!--
         <article class="card-root card-pad">
           <h3>Lagos</h3>
           <p>Lagos organizing updates and action alerts for volunteers and supporters.</p>
@@ -97,21 +118,54 @@ Sincerely,
           <p>Kano chapter coordination for local awareness, outreach, and public engagement.</p>
           <a href="#" aria-disabled="true">Join Kano group</a>
         </article>
+        -->
         <article class="card-root card-pad">
           <h3>National</h3>
           <p>Nationwide discussion channel for cross-city collaboration and chapter-wide updates.</p>
-          <a href="#" aria-disabled="true">Join national group</a>
+          <a href="https://chat.whatsapp.com/L4o2IiOX1HI2GWQi0J9ZJv" target="_blank" rel="noreferrer">Join national group</a>
         </article>
       </div>
     </div>
   </section>
 </BaseLayout>
 
+<script is:inline>
+  const letterTemplate = document.getElementById('letter-template');
+
+  const buildMailtoHref = (address, subject) => {
+    const body = letterTemplate instanceof HTMLTextAreaElement ? letterTemplate.value.trim() : '';
+    return `mailto:${address}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const wireMailButton = (id, address, subject) => {
+    const link = document.getElementById(id);
+    if (!link) {
+      return;
+    }
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.location.href = buildMailtoHref(address, subject);
+    });
+  };
+
+  wireMailButton('mail-nitda', 'info@nitda.gov.ng', 'Policy Request: Frontier AI Safety Consultation');
+  wireMailButton('mail-nass', 'info@nass.gov.ng', 'Policy Request: Legislative Action on Frontier AI Safety');
+</script>
+
 <style>
-  .form-grid {
-    display: grid;
-    gap: var(--space-2);
-    max-width: 720px;
+  .join-embed {
+    max-width: 760px;
+    margin-top: var(--space-1);
+  }
+  .join-embed iframe {
+    width: 100%;
+    border: 0;
+    display: block;
+  }
+  .whatsapp-cta {
+    margin-top: var(--space-2);
+    max-width: 760px;
   }
   label {
     display: grid;
@@ -127,6 +181,13 @@ Sincerely,
     display: grid;
     gap: var(--space-2);
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .action-icon {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--brand-green);
+    vertical-align: -0.12em;
+    margin-right: 0.35rem;
   }
   .card-pad {
     padding: var(--space-2);

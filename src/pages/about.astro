@@ -14,16 +14,27 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 		<div class="container-root">
 			<h1>About PauseAI Nigeria</h1>
 			<p>
-				PauseAI Nigeria was founded by a small group of organizers, researchers, and technology professionals
-				who saw a widening gap between the pace of frontier AI development and the pace of public accountability.
-				We formed this chapter because Nigeria should not wait for external institutions to define AI risk policy
-				on our behalf.
+				PauseAI Nigeria was founded by organizers, researchers, and technology professionals who recognized a critical gap:
+				frontier AI is being developed faster than safety can be guaranteed or democratic institutions can respond. We formed
+				this chapter because Nigeria must not be sidelined in decisions that affect humanity's AI future.
 			</p>
 			<p>
-				As the first West Africa chapter in PauseAI Global, we work to translate global AI safety concerns into
-				a credible Nigerian policy agenda. Our mission is to build public understanding, support evidence-based
-				law and regulation, and organize practical civic action so that powerful AI systems are governed by safety,
-				democratic oversight, and public interest.
+				As the first PauseAI chapter in West Africa, we contribute to a global movement calling for a temporary pause on
+				training the most powerful AI systems until robust safety guarantees and meaningful democratic oversight are in place.
+			</p>
+			<p>
+				Our mission is to:
+			</p>
+			<ul style="margin: var(--space-1) 0; padding-left: 1.5rem;">
+				<li><strong>Build public awareness</strong> of AI risks and why democratic control matters</li>
+				<li><strong>Inform policy discourse</strong> through evidence-based research and expert voices</li>
+				<li><strong>Engage policymakers</strong> to ensure Nigeria participates in international AI governance</li>
+				<li><strong>Mobilize civic action</strong>—protests, campaigns, and direct advocacy—to shift political will</li>
+				<li><strong>Engage students and youth</strong> as future leaders and technologists who will inherit these systems</li>
+			</ul>
+			<p>
+				This is not anti-technology. It is pro-democracy. We believe Nigeria can lead on AI safety while remaining an innovation
+				hub. Responsible governance comes first; progress follows.
 			</p>
 		</div>
 	</section>
@@ -80,13 +91,20 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 
 	<section class="section-root">
 		<div class="container-root">
-			<h2>Chapter Timeline</h2>
-			<ul class="timeline">
-				<li>Founding chapter coordination began in early 2026.</li>
-				<li>Initial policy and organizing roadmap drafted across Lagos and Abuja networks.</li>
-				<li>Public chapter rollout and volunteer expansion in progress.</li>
-				<li>Legal registration and formal governance structure in progress.</li>
-			</ul>
+		<h2>Our Approach</h2>
+		<p>
+			We operate with five core strategies, grounded in the broader PauseAI Global theory of change:
+		</p>
+		<ul class="timeline">
+			<li><strong>Grow the Movement:</strong> Build a national volunteer base through online organizing, accessible ways to take action, and transparent communication.</li>
+			<li><strong>Inform Public Discourse:</strong> Publish educational content, appear in media, host events, and partner with academics and civil society to shift the conversation.</li>
+			<li><strong>Engage Policymakers:</strong> Direct lobbying, policy briefs, and meetings with legislators and regulators to raise AI safety to decision-making priority.</li>
+			<li><strong>Organize Civic Action:</strong> Coordinate protests, campaigns, and public pressure to shift political will and media attention.</li>
+			<li><strong>Mobilize Youth:</strong> Host university debates, engage students as future leaders, and build a pipeline of informed AI safety advocates.</li>
+		</ul>
+		<p style="margin-top: var(--space-2); color: var(--text-muted);">
+			For full context, see the <a href="/" style="text-decoration: underline;">PauseAI Global Theory of Change</a>.
+		</p>
 		</div>
 	</section>
 
@@ -103,8 +121,8 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	.team-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: var(--space-2) var(--space-2);
-		row-gap: var(--space-4);
+		column-gap: var(--space-2);
+		row-gap: var(--space-5);
 		margin-top: var(--space-2);
 	}
 	.card-pad {
@@ -131,10 +149,10 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	}
 	.team-name {
 		color: var(--brand-orange);
-		
+		margin-bottom: 0.35rem;
+	}
 	.team-role {
 		color: var(--brand-green);
-	}margin-bottom: 0.35rem;
 	}
 	.team-links {
 		display: flex;
@@ -161,5 +179,10 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 		padding-left: 1.2rem;
 		display: grid;
 		gap: 0.6rem;
+	}
+	@media (max-width: 720px) {
+		.team-grid {
+			row-gap: var(--space-4);
+		}
 	}
 </style>

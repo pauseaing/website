@@ -1,214 +1,76 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2024'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+title: 'Understanding the Frontier AI Crisis: A Nigeria Explainer'
+description: 'A long-form explainer on why frontier AI risk is a governance issue, why urgency matters, and what a coordinated pause should include.'
+pubDate: 'Jun 19 2026'
+tag: article
+author: PauseAI Nigeria
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+## The Core Issue
 
-## Headings
+Frontier AI is moving from useful automation to strategic capability. Systems are becoming better at planning, coding, persuasion, and autonomous task execution. Yet governance systems are still built for slower technologies.
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+This mismatch is the crisis: capability growth is compounding while control mechanisms lag.
 
-# H1
+## Why This Is Different From Normal Tech Risk
 
-## H2
+Most technologies scale within institutions that can adapt over time. Frontier AI risks can scale faster than institutional response for three reasons:
 
-### H3
+1. **Speed pressure**: labs and states are competing to move first.
+2. **Opacity**: high-capability models remain hard to interpret internally.
+3. **Power concentration**: a few actors can affect global outcomes.
 
-#### H4
+In that environment, safety promises are not enough. We need verifiable safeguards.
 
-##### H5
+## What Experts Keep Warning About
 
-###### H6
+Across disciplines, experts have repeatedly highlighted similar concerns:
 
-## Paragraph
+- Misalignment between system objectives and human values.
+- Emergent deceptive behavior under pressure.
+- Capability gains outpacing red-team and governance readiness.
+- Difficulty controlling systems once integrated into critical infrastructure.
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+These concerns are not fringe views. They now sit inside mainstream technical and policy discussion.
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+## Why Nigeria Should Treat This as a Priority
 
-## Images
+Nigeria is not insulated from frontier AI risk. We are a large, connected digital economy with high exposure in media, finance, communications, education, and public institutions.
 
-### Syntax
+Key vulnerabilities include:
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
+- AI-driven disinformation in sensitive political cycles.
+- Fraud and social engineering at scale.
+- Labor volatility in white-collar and service sectors.
+- External dependency on systems we cannot independently audit.
 
-### Output
+If governance is weak, these risks translate into democratic and economic fragility.
 
-![blog placeholder](../../assets/blog-placeholder-about.jpg)
+## What a Real Pause Requires
 
-## Blockquotes
+A meaningful pause is not a slogan. It is a policy package that includes:
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+- Clear capability thresholds for pre-deployment review.
+- Independent evaluations and adversarial testing.
+- Reporting obligations on risk-relevant system behavior.
+- Liability and enforcement structures across borders.
+- Democratic oversight with representation from affected regions.
 
-### Blockquote without attribution
+Any pause without enforcement is only rhetoric. Any enforcement without transparency is only theater.
 
-#### Syntax
+## A Practical Path Forward
 
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
+The path is difficult but realistic. The world has coordinated on high-risk domains before: arms controls, ozone protection, and non-proliferation frameworks all show that rival states can still cooperate when stakes are existential.
 
-#### Output
+For AI governance, Nigeria should push for:
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
+- International treaty dialogue on frontier controls.
+- African policy coordination on shared negotiating positions.
+- Domestic oversight institutions with technical capacity.
+- Public education that converts anxiety into informed civic action.
 
-### Blockquote with attribution
+## Conclusion
 
-#### Syntax
+The decision is not between innovation and safety. The decision is whether innovation remains accountable to democratic society.
 
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+If intelligence is power, governance is non-negotiable.

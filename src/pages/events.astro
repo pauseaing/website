@@ -79,8 +79,18 @@ const pastEvents = allEvents.filter((entry) => entry.data.status === 'past');
   <section class="section-root section-root-accent">
     <div class="container-root">
       <h2>Global PauseAI Events</h2>
-      <p>Global events feed integration is planned after local event publishing is active.</p>
-      <p><a href="https://pauseai.info" target="_blank" rel="noreferrer">Visit PauseAI Global</a></p>
+      <p>Track upcoming PauseAI events from the shared global calendar.</p>
+      <div class="calendar-embed">
+        <iframe
+          src="https://lu.ma/embed/calendar/cal-E1qhLPs5IvlQr8S/events?"
+          height="450"
+          frameborder="0"
+          style="border: 1px solid #bfcbda88; border-radius: 0px; width: 100%;"
+          allowfullscreen
+          aria-hidden="false"
+          title="PauseAI Events Calendar"
+        ></iframe>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -93,5 +103,8 @@ const pastEvents = allEvents.filter((entry) => entry.data.status === 'past');
   }
   .card-pad {
     padding: var(--space-2);
+  }
+  .calendar-embed {
+    margin-top: var(--space-2);
   }
 </style>

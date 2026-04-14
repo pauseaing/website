@@ -8,7 +8,7 @@ const globalNews = await getGlobalNews();
 <BaseLayout>
   <section
     class="section-root section-root-accent"
-    style="position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center;"
+    style="position:relative;overflow:hidden;min-height:70vh;min-height:70svh;display:flex;align-items:center;"
   >
     <div
       aria-hidden="true"
@@ -16,10 +16,12 @@ const globalNews = await getGlobalNews();
     ></div>
     <div class="container-root" style="position:relative;z-index:1;padding-block:var(--space-4);">
       <p class="kicker">Nigeria chapter · PauseAI Global</p>
-      <h1 class="heading-accent" style="margin-bottom:var(--space-2);">The race to build unsafe AI must stop.</h1>
+      <h1 class="heading-accent" style="margin-bottom:var(--space-2);">Frontier AI must not be deployed without democratic control.</h1>
       <p style="max-width:62ch;color:var(--text-muted);margin-bottom:var(--space-3);">
-        Frontier AI is being developed faster than safety can keep pace. PauseAI Nigeria organizes citizens,
-        researchers, and policymakers to demand a global pause before it is too late.
+        The most powerful AI systems are being developed faster than safety can be guaranteed or oversight can be secured.
+        PauseAI Nigeria mobilizes citizens, researchers, and policymakers to ensure Nigeria shapes—not inherits—the rules
+        that govern superhuman AI. We call for a coordinated global pause until robust safety guarantees and democratic
+        accountability are in place.
       </p>
       <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;">
         <a href="/take-action#join" class="btn-root btn-primary">Join the chapter</a>
@@ -59,18 +61,23 @@ const globalNews = await getGlobalNews();
 
   <section class="section-root">
     <div class="container-root">
-      <h2>Why pause AI in Nigeria?</h2>
+      <h2>Nigeria must shape global AI governance, not inherit it</h2>
       <p>
-        Nigeria's digital economy is on track to exceed half a trillion dollars in value this decade, and a
-        large share of future growth depends on trust in digital infrastructure and public institutions.
-        If frontier AI systems are deployed at speed without proven safeguards, key sectors including finance,
-        law, media, and healthcare could face rapid disruption before workers and regulators are prepared.
+        Nigeria's digital economy is on track to exceed half a trillion dollars in value this decade. That scale
+        makes Nigeria a major stakeholder in how frontier AI is governed. Yet without coordinated international action,
+        Nigeria risks seeing unsafe AI systems deployed by external actors, with outcomes written by nations and corporations
+        far from Nigerian communities.
       </p>
       <p>
-        A pause on the most powerful systems is a practical safety step, not a rejection of innovation. It gives
-        Nigeria space to shape policy, protect civic processes from AI-enabled disinformation, and build local
-        governance capacity instead of inheriting decisions made elsewhere.
+        A temporary pause on frontier AI development is a practical step to establish safety guarantees and democratic oversight
+        before deployment. It gives Nigeria—alongside other nations—time to:
       </p>
+      <ul style="margin: var(--space-1) 0; padding-left: 1.5rem;">
+        <li>Build policy capacity and independent audit frameworks</li>
+        <li>Protect financial systems, elections, and civic institutions from AI-enabled harms</li>
+        <li>Participate in international treaty negotiations from a position of principle</li>
+        <li>Ensure AI innovation serves Nigerian development priorities, not external interests</li>
+      </ul>
       <p><a href="/why-pause">Read the full case</a></p>
     </div>
   </section>
@@ -94,17 +101,9 @@ const globalNews = await getGlobalNews();
 
   <section class="section-root">
     <div class="container-root">
-      <h2>Get the Nigeria AI briefing</h2>
-      <p>Policy updates, chapter news, and action alerts straight to your inbox.</p>
-      <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form">
-        <input type="hidden" name="form-name" value="newsletter" />
-        <label>
-          Email address
-          <input type="email" name="email" required />
-        </label>
-        <button class="btn-root btn-primary" type="submit">Subscribe</button>
-      </form>
-      <p class="trust-note">No spam. Unsubscribe anytime.</p>
+      <h2>Join the PauseAI Global newsletter</h2>
+      <p>Get global updates and campaign news directly from PauseAI.</p>
+      <a class="btn-root btn-primary" href="https://pauseai.substack.com/?email=" target="_blank" rel="noreferrer">Join newsletter</a>
     </div>
   </section>
 </BaseLayout>
@@ -132,20 +131,5 @@ const globalNews = await getGlobalNews();
   .news-meta {
     color: var(--text-muted);
     margin: 0.2rem 0 0.7rem;
-  }
-  .newsletter-form {
-    display: flex;
-    align-items: end;
-    gap: var(--space-2);
-    flex-wrap: wrap;
-  }
-  .newsletter-form label {
-    display: grid;
-    gap: 0.4rem;
-    min-width: min(100%, 360px);
-  }
-  .trust-note {
-    color: var(--text-muted);
-    margin-top: var(--space-1);
   }
 </style>

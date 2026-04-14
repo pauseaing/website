@@ -1,16 +1,61 @@
 ---
-title: 'Third post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 22 2022'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+title: 'From Awareness to Policy: How a Pause Movement Wins'
+description: 'An action blueprint for converting AI safety concern into policy momentum through organizing, media, and civic pressure.'
+pubDate: 'Jul 22 2026'
+tag: article
+author: PauseAI Nigeria
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+## Concern Is Not Enough
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Many people already feel uneasy about the AI race. But concern alone rarely changes policy. Movements win when concern is translated into organized pressure, clear asks, and sustained public legitimacy.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+For PauseAI Nigeria, the objective is not to "raise awareness" in isolation. The objective is to shift institutions toward enforceable safety and democratic control of frontier systems.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+## A Practical Movement Funnel
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Most successful civic movements follow a sequence:
+
+1. **Narrative clarity**: explain the threat in plain language.
+2. **Public identity**: show people they are not alone.
+3. **Action pathways**: provide easy first steps.
+4. **Policy pressure**: direct public energy at decision-makers.
+5. **Institutional response**: convert pressure into concrete policy movement.
+
+If any stage is missing, momentum leaks.
+
+## What This Means in the Nigerian Context
+
+Nigeria has unique constraints and opportunities. Public trust in institutions is fragile, youth political engagement is high but uneven, and media attention cycles are intense. That means AI safety organizing must be both credible and practical.
+
+Effective tactics include:
+
+- University debates that normalize AI risk discussion.
+- Policy briefs tailored to Nigerian institutions.
+- Coordinated media campaigns around specific asks.
+- Low-friction volunteer onboarding through city and online channels.
+- Visible civic moments that widen the Overton window.
+
+## Four High-Leverage Actions for 2026
+
+### 1) Policy Contact Campaigns
+
+Structured outreach to lawmakers and regulators should focus on specific outcomes: consultation hearings, public statements, and safety requirements for high-capability models.
+
+### 2) Media Agenda Setting
+
+Opinion pieces, radio interviews, and explainers can move AI safety from niche concern to mainstream public-interest issue.
+
+### 3) Youth Pipeline Building
+
+Students in technology, law, economics, and public policy will shape future governance. Early engagement compounds.
+
+### 4) Coalition Expansion
+
+AI safety should connect with labor, civic, and rights organizations where interests overlap: accountability, transparency, public control, and long-term societal stability.
+
+## The Standard We Should Demand
+
+The benchmark is simple: if a system could destabilize institutions, labor markets, or public safety at scale, it should not be deployed without independent verification and democratic legitimacy.
+
+PauseAI Nigeria's role is to make that standard politically unavoidable.

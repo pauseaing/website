@@ -5,6 +5,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const entries = (await getCollection('policyTracker')).sort(
   (a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf(),
 );
+
+const tocSignalByStatus = {
+  'No public stance': 'Awareness gap: short-term outcome not yet achieved.',
+  'Under review': 'Agenda entry: issue is moving into institutional consideration.',
+  'Consulted PauseAI': 'Policy dialogue: medium-term engagement pathway is active.',
+  'Active engagement': 'Institutional traction: conditions improving for alignment action.',
+};
+
+const statusCounts = entries.reduce((acc, entry) => {
+  const key = entry.data.status;
+  acc[key] = (acc[key] ?? 0) + 1;
+  return acc;
+}, {});
 ---
 
 <BaseLayout
@@ -13,8 +26,11 @@ const entries = (await getCollection('policyTracker')).sort(
 >
   <section class="section-root">
     <div class="container-root">
-      <h1>Tracking Nigeria's AI governance landscape</h1>
-      <p>We monitor what key institutions are saying and doing on AI regulation.</p>
+      <h1>Nigeria AI Policy Tracker</h1>
+      <p>
+        This dashboard tracks progress against PauseAI Nigeria's theory of change: move from awareness, to policy agenda
+        inclusion, to formal institutional engagement, and finally to national alignment with international frontier AI pause efforts.
+      </p>
       <p><strong>Last updated:</strong> April 2026</p>
     </div>
   </section>
@@ -22,16 +38,34 @@ const entries = (await getCollection('policyTracker')).sort(
   <section class="section-root section-root-accent">
     <div class="container-root">
       <h2>Status Dashboard</h2>
+      <p>
+        We classify each institution by where it currently sits in the pathway from low awareness to active governance engagement.
+      </p>
+      <div class="metrics-grid">
+        <article class="card-root card-pad">
+          <h3>{statusCounts['No public stance'] ?? 0}</h3>
+          <p>No public stance</p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>{(statusCounts['Under review'] ?? 0) + (statusCounts['Consulted PauseAI'] ?? 0)}</h3>
+          <p>Institutions in dialogue stages</p>
+        </article>
+        <article class="card-root card-pad">
+          <h3>{statusCounts['Active engagement'] ?? 0}</h3>
+          <p>Active engagement signals</p>
+        </article>
+      </div>
       <div class="status-grid">
         {
           entries.length > 0 ? (
             entries.map((entry) => (
               <article class="card-root card-pad">
                 <h3>{entry.data.institution}</h3>
-                <p>Status: {entry.data.status}</p>
+                <p><strong>Status:</strong> {entry.data.status}</p>
+                <p><strong>Theory-of-change signal:</strong> {tocSignalByStatus[entry.data.status]}</p>
                 <p><strong>Current stance:</strong> {entry.data.stance}</p>
                 <p><strong>Latest action:</strong> {entry.data.latestAction}</p>
-                <p><strong>Our ask:</strong> {entry.data.ask}</p>
+                <p><strong>Priority ask:</strong> {entry.data.ask}</p>
                 <p>{entry.data.summary}</p>
               </article>
             ))
@@ -49,6 +83,10 @@ const entries = (await getCollection('policyTracker')).sort(
   <section class="section-root">
     <div class="container-root">
       <h2>Policy Timeline</h2>
+      <p>
+        Timeline entries below show institutional movement over time and help us identify where public education,
+        lobbying, and coalition pressure are most needed.
+      </p>
       <ul class="timeline">
         {
           entries.length > 0 ? (
@@ -72,10 +110,14 @@ const entries = (await getCollection('policyTracker')).sort(
     <div class="container-root">
       <h2>PauseAI Nigeria's Position</h2>
       <p>
-        We support a temporary pause on frontier AI development until verifiable safeguards,
-        governance mechanisms, and accountability standards are in place.
+        We support a temporary international pause on frontier AI development until verifiable safeguards,
+        enforceable governance mechanisms, and democratic accountability standards are in place.
       </p>
-      <p>Policy brief PDF link will be added in this section.</p>
+      <ul>
+        <li>Short-term objective: broaden policy and media awareness of frontier AI risk.</li>
+        <li>Medium-term objective: secure institutional engagement and agenda inclusion.</li>
+        <li>Long-term objective: align Nigeria with international pause and treaty pathways.</li>
+      </ul>
     </div>
   </section>
 
@@ -89,6 +131,12 @@ const entries = (await getCollection('policyTracker')).sort(
 </BaseLayout>
 
 <style>
+  .metrics-grid {
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin: var(--space-2) 0;
+  }
   .status-grid {
     display: grid;
     gap: var(--space-2);

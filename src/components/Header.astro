@@ -4,25 +4,30 @@ import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/why-pause">Why Pause AI?</HeaderLink>
-			<HeaderLink href="/take-action">Take Action</HeaderLink>
-			<HeaderLink href="/events">Events</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About Us</HeaderLink>
-			<HeaderLink href="/nigeria-ai-policy">Policy Tracker</HeaderLink>
-			<HeaderLink href="/communities">Communities</HeaderLink>
-			<HeaderLink href="/resources">Resources</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+	<nav class="site-nav" aria-label="Main navigation">
+		<div class="nav-top">
+			<a href="/" class="brand-link" aria-label={`${SITE_TITLE} home`}>
+				<img src="/Pause-Nigeria-Logo.png" alt="PauseAI Nigeria logo" class="brand-logo" />
+				<span class="brand-title" aria-label={SITE_TITLE}>
+					<span class="brand-word brand-pause">Pause</span><span class="brand-word brand-ai">AI</span>
+					<span class="brand-word brand-nigeria">Nigeria</span>
+				</span>
+			</a>
+			<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">
+				<span class="sr-only">Toggle navigation menu</span>
+				<span class="hamburger" aria-hidden="true"></span>
+			</button>
 		</div>
-		<button id="theme-toggle" class="btn-root btn-secondary" type="button">Theme</button>
-		<div class="social-links" aria-label="Social links coming soon">
-			<span>X (coming soon)</span>
-			<span>LinkedIn (coming soon)</span>
-			<span>WhatsApp (coming soon)</span>
+		<div id="primary-nav" class="nav-panel" data-open="false">
+			<div class="internal-links">
+				<HeaderLink href="/why-pause">Why Pause AI?</HeaderLink>
+				<HeaderLink href="/take-action">Take Action</HeaderLink>
+				<HeaderLink href="/events">Events</HeaderLink>
+				<HeaderLink href="/blog">Blog</HeaderLink>
+				<HeaderLink href="/about">About Us</HeaderLink>
+				<HeaderLink href="/nigeria-ai-policy">Policy Tracker</HeaderLink>
+				<HeaderLink href="/resources">Resources</HeaderLink>
+			</div>
 		</div>
 	</nav>
 </header>
@@ -33,78 +38,223 @@ import HeaderLink from './HeaderLink.astro';
 		background: var(--surface-1);
 		border-bottom: 1px solid var(--border-subtle);
 	}
-	.internal-links {
-		display: flex;
-		align-items: center;
-		gap: 0.35rem;
-		flex-wrap: wrap;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.1rem;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
+	.site-nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--space-2);
 		min-height: 72px;
 	}
-	nav a {
+	.nav-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-1);
+	}
+	.nav-panel {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex: 1;
+	}
+	.internal-links {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		flex-wrap: wrap;
+	}
+	.menu-toggle {
+		display: none;
+		width: 2.6rem;
+		height: 2.6rem;
+		padding: 0;
+		background: transparent;
+		border: 1px solid var(--border-subtle);
+		color: var(--text-body);
+	}
+	.hamburger,
+	.hamburger::before,
+	.hamburger::after {
+		display: block;
+		width: 18px;
+		height: 2px;
+		background: currentColor;
+		transition: transform var(--duration-fast) var(--ease-base), opacity var(--duration-fast) var(--ease-base);
+	}
+	.hamburger {
+		position: relative;
+		margin: 0 auto;
+	}
+	.hamburger::before,
+	.hamburger::after {
+		content: '';
+		position: absolute;
+		left: 0;
+	}
+	.hamburger::before {
+		top: -6px;
+	}
+	.hamburger::after {
+		top: 6px;
+	}
+	.menu-toggle[aria-expanded='true'] .hamburger {
+		transform: rotate(45deg);
+	}
+	.menu-toggle[aria-expanded='true'] .hamburger::before {
+		transform: rotate(90deg);
+		top: 0;
+	}
+	.menu-toggle[aria-expanded='true'] .hamburger::after {
+		opacity: 0;
+	}
+	.brand-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		max-width: min(74vw, 500px);
+		text-decoration: none;
+		color: var(--text-strong);
+		overflow: hidden;
+	}
+	.brand-logo {
+		width: clamp(44px, 7vw, 64px);
+		height: auto;
+		max-width: 100%;
+		max-height: 64px;
+		object-fit: contain;
+		flex-shrink: 0;
+	}
+	.brand-title {
+		margin: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.2rem 0.45rem;
+		font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+		font-family: 'Saira Condensed', sans-serif;
+		font-weight: 700;
+		line-height: 1;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.brand-word {
+		font-weight: 700;
+	}
+	.brand-pause {
+		color: var(--brand-orange);
+	}
+	.brand-ai {
+		color: var(--brand-black);
+	}
+	.brand-nigeria {
+		color: var(--brand-green);
+	}
+	.site-nav a:not(.brand-link) {
 		padding: 0.4em 0.5em;
 		color: var(--text-body);
 		border-bottom: 2px solid transparent;
 		text-decoration: none;
 	}
-	nav a.active {
+	.site-nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--brand-orange);
 		color: var(--brand-orange);
 	}
-	.social-links,
-	.social-links span {
-		display: flex;
-		align-items: center;
-	}
-	.social-links {
-		gap: 0.4rem;
-		font-size: 0.82rem;
-		color: var(--text-muted);
-	}
 	@media (max-width: 720px) {
-		.social-links {
-			display: none;
+		header {
+			padding: 0 var(--space-1);
 		}
-		nav {
-			align-items: flex-start;
+		.site-nav {
+			display: block;
+			min-height: 0;
 			padding: var(--space-1) 0;
 		}
-		h2 {
-			padding-top: 0.6rem;
+		.nav-top {
+			min-height: 58px;
+			position: relative;
+			z-index: 81;
 		}
-		#theme-toggle {
-			margin-top: 0.45rem;
+		.brand-link {
+			max-width: calc(100vw - 84px);
+		}
+		.brand-logo {
+			max-height: 54px;
+		}
+		.brand-title {
+			font-size: clamp(0.96rem, 3.4vw, 1.2rem);
+			gap: 0.25rem;
+			padding: 0.16rem 0.32rem;
+		}
+		.site-nav a:not(.brand-link) {
+			padding: 0.55rem 0;
+		}
+		.menu-toggle {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--surface-0);
+			z-index: 82;
+		}
+		.nav-panel {
+			display: none;
+			position: fixed;
+			inset: 0;
+			z-index: 80;
+			background: var(--surface-1);
+			padding: calc(var(--space-6) + 16px) var(--space-2) var(--space-2);
+			overflow-y: auto;
+		}
+		.nav-panel[data-open='true'] {
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+		.internal-links {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 100%;
+			gap: var(--space-1);
+			text-align: left;
+		}
+		.internal-links a {
+			display: block;
+			width: 100%;
+			text-align: left;
+			font-size: 1.05rem;
+			padding: 0.65rem 0;
 		}
 	}
 </style>
 
 <script is:inline>
-	const root = document.documentElement;
-	const key = 'pauseai-theme';
-	const stored = localStorage.getItem(key);
-	if (stored === 'dark' || stored === 'light') {
-		root.setAttribute('data-theme', stored);
-	}
+	const menuToggle = document.getElementById('menu-toggle');
+	const navPanel = document.getElementById('primary-nav');
+	const closeMenu = () => {
+		menuToggle?.setAttribute('aria-expanded', 'false');
+		navPanel?.setAttribute('data-open', 'false');
+		document.body.style.overflow = '';
+	};
 
-	const toggle = document.getElementById('theme-toggle');
-	toggle?.addEventListener('click', () => {
-		const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-		root.setAttribute('data-theme', next);
-		localStorage.setItem(key, next);
+	menuToggle?.addEventListener('click', () => {
+		const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+		menuToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+		navPanel?.setAttribute('data-open', isOpen ? 'false' : 'true');
+		document.body.style.overflow = isOpen ? '' : 'hidden';
+	});
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 720) {
+			closeMenu();
+		}
+	});
+
+	document.querySelectorAll('.internal-links a').forEach((link) => {
+		link.addEventListener('click', () => {
+			if (window.innerWidth <= 720) {
+				closeMenu();
+			}
+		});
 	});
 </script>

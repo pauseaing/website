@@ -42,7 +42,6 @@ const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.
 	<section id="team" class="section-root section-root-accent">
 		<div class="container-root">
 			<h2>Founding Team</h2>
-			<p>Team profiles are editable via CMS and will expand as city organizers come onboard.</p>
 			<div class="team-grid">
 				{
 					team.length > 0 ? (
